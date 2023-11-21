@@ -22,6 +22,8 @@ body {
 
 .weather-header {
   background-color: #343a40;
+  text-align: center;
+  color:white;
 }
 
 .weather-header h1 {

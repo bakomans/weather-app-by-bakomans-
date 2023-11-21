@@ -89,4 +89,14 @@ $(document).ready(function () {
       });
     }
   });
+// Function to clear the search history
+function clearHistory() {
+    localStorage.removeItem("searchHistory");
+    $("#history").empty(); // Clear the history displayed on the page
+  }
+  
+  // Event listener for the "Clear History" button
+  $("#clear-history-button").on("click", function () {
+    clearHistory();
+  });  
   
