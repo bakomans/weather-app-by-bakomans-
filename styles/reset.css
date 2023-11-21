@@ -1,98 +1,198 @@
-/* Reset default styles */
-body, h1, h2, h3, p {
+/* Reset Styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Basic Styling */
+.container-fluid {
+  margin: 0 auto;
+}
+
+.weather-header {
+  background-color: #343a40;
+}
+
+.weather-header h1 {
+  margin: 0;
+  padding: 10px;
+}
+
+.row {
+  margin: 20px 0;
+}
+
+/* Form Styles */
+.form {
+  margin-bottom: 20px;
+}
+
+.weather-search {
+  width: 80%;
+}
+
+.search-button {
+  width: 20%;
+}
+
+/* History Styles */
+#history-container {
+  border-right: 1px solid #ddd; 
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+/* Forecast Styles */
+#forecast {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md {
+  flex: 1 0 20%; 
+  margin: 10px;
+}
+
+.card {
+  border: none;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #history-container {
+    border: none; 
+  }
+
+  #forecast {
+    flex-direction: column;
+  }
+
+  .col-md {
+    flex: 1 0 100%;
+  }
+}
+/* Styling for the forecast cards */
+.col-md {
+    border: 2px solid black; 
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px; 
+  }
+  
+  .card {
+    transition: transform 0.3s ease-in-out; 
+  }
+  
+  /* Hover effect on the forecast cards */
+  .col-md:hover {
+    transform: scale(1.1); 
+  }
+  
+  /* Styling for the card body */
+  .card-body {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Styling for the forecast date */
+  .card-body h5 {
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the weather icon */
+  .card-body img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for temperature and humidity */
+  .card-body p {
     margin: 0;
-    padding: 0;
+  }
+
+/* Styling for the search history section */
+#history-container {
+    border-right: 1px solid #ddd; 
+    padding-right: 15px; 
   }
   
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  /* Styling for the search history heading */
+  #form-heading {
+    margin: 5px;
+    padding:5px;
   }
   
-  .container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  
-  /* Header */
-  .weather-header {
-    background-color: #343a40;
-  }
-  
-  .weather-header h1 {
-    font-size: 2rem;
-  }
-  
-  /* Form */
+  /* Styling for the search form */
   .form {
-    margin-top: 20px;
+    margin: 20px;
   }
-  
-  .form-input {
-    width: 70%;
-    padding: 8px;
+  /* weather search style */
+  .weather-search {
+    width: calc(100% - 10px); 
+    padding: 10px; 
+    background-color: #ffffff; 
+    border: solid 1px; 
+    border-radius: 5px 0 0 5px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
   
   .search-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
+    width: 20%;
   }
   
-  /* Search History */
+  /* clear history button */
+  #clear-history-button {
+    margin: 10px;
+    width:15%;
+    
+  }
+  
+  /* Styling for the search history*/
   .list-group {
-    margin-top: 20px;
+    margin: 10px;
   }
   
-  .history-item {
+  .list-group-item {
     cursor: pointer;
+    border: 1px solid #190d0d; 
+    border-radius: 5px; 
+    margin: 5px;
+    padding: 8px;
   }
   
-  /* Today Section */
-  #today {
-    margin-top: 20px;
+  .list-group-item:hover {
+    background-color: #f8f9fa; /
+  }
+  .search-button {
+    width: 100%; 
+    padding: 10px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    margin: 10px;
   }
   
-  /* Forecast Section */
-  #forecast {
-    margin-top: 20px;
-  }
-  
-  .col-md-2 {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 5px;
-  }
-  
-  /* Horizontal line */
-  .hr {
-    margin-top: 20px;
-    border: 0;
-    border-top: 1px solid #ddd;
-  }
-  
-  /* Font Awesome styles */
-  .weather-header i,
-  .today-section i {
-    font-size: 1.5rem;
-    margin-left: 5px;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 767px) {
-    .form-input {
-      width: 100%;
-    }
-  
-    .search-button {
-      width: 100%;
-    }
-  }
-  
+  .search-button:hover {
+    background-color: #0056b3; 
+  }  
+    
