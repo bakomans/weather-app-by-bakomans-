@@ -1,11 +1,11 @@
 $(document).ready(function () {
     // My Api key
-    const apiKey = "a4a04040b26ae7120449f277bffe523d";
+    var apiKey = "a4a04040b26ae7120449f277bffe523d";
   
     // Event listener for the form 
     $("#search-form").submit(function (event) {
       event.preventDefault();
-      const cityName = $("#search-input").val().trim();
+      var cityName = $("#search-input").val().trim();
   
       if (cityName !== "") {
         $("#search-input").val("");
@@ -15,7 +15,7 @@ $(document).ready(function () {
   
     // Function to fetch weather data
     function getWeather(cityName) {
-      const queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
+      var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
   
       $.ajax({
         url: queryURL,
@@ -29,16 +29,16 @@ $(document).ready(function () {
   
     // Function to display current weather
     function displayCurrentWeather(data) {
-      const currentWeather = data.list[0];
-      const city = data.city.name;
-      const date = dayjs().format("MM/DD/YYYY");
-      const iconCode = currentWeather.weather[0].icon;
-      const iconURL = `https://openweathermap.org/img/wn/${iconCode}.png`;
-      const temperature = currentWeather.main.temp;
-      const humidity = currentWeather.main.humidity;
-      const windSpeed = currentWeather.wind.speed;
+      var currentWeather = data.list[0];
+      var city = data.city.name;
+      var date = dayjs().format("MM/DD/YYYY");
+      var iconCode = currentWeather.weather[0].icon;
+      var iconURL = `https://openweathermap.org/img/wn/${iconCode}.png`;
+      var temperature = currentWeather.main.temp;
+      var humidity = currentWeather.main.humidity;
+      var windSpeed = currentWeather.wind.speed;
   
-      const currentWeatherHTML = `
+      var currentWeatherHTML = `
         <h2>${city} (${date}) <img src="${iconURL}" alt="Weather Icon"></h2>
         <p>Temperature: ${temperature} &#8457;</p>
         <p>Humidity: ${humidity}%</p>
@@ -50,15 +50,15 @@ $(document).ready(function () {
   
     // Function to display 5-day forecast
     function displayForecast(data) {
-        const forecast = data.list.slice(1, 6);
+        var forecast = data.list.slice(1, 6);
       
         let forecastHTML = "";
         forecast.forEach((item) => {
-          const date = dayjs(item.dt_txt).format("MM/DD/YYYY");
-          const iconCode = item.weather[0].icon;
-          const iconURL = `https://openweathermap.org/img/wn/${iconCode}.png`;
-          const temperature = item.main.temp;
-          const humidity = item.main.humidity;
+          var date = dayjs(item.dt_txt).format("MM/DD/YYYY");
+          var iconCode = item.weather[0].icon;
+          var iconURL = `https://openweathermap.org/img/wn/${iconCode}.png`;
+          var temperature = item.main.temp;
+          var humidity = item.main.humidity;
       
           forecastHTML += `
             <div class="col-md">
@@ -79,12 +79,12 @@ $(document).ready(function () {
   
     // Function to add the city to the search 
     function addToHistory(cityName) {
-      const historyItem = `<button type="button" class="list-group-item">${cityName}</button>`;
+      var historyItem = `<button type="button" class="list-group-item">${cityName}</button>`;
       $("#history").prepend(historyItem);
   
       // Event listener for history item 
       $(".list-group-item").click(function () {
-        const selectedCity = $(this).text();
+        var selectedCity = $(this).text();
         getWeather(selectedCity);
       });
     }
