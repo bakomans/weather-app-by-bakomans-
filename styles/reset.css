@@ -1,0 +1,91 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  /* Header */
+  .weather-header {
+    background-color: #343a40;
+  }
+  
+  .weather-header h1 {
+    font-size: 2rem;
+  }
+  
+  /* Form */
+  .form {
+    margin-top: 20px;
+  }
+  
+  .form-input {
+    width: 70%;
+    padding: 8px;
+  }
+  
+  .search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  /* Search History */
+  .list-group {
+    margin-top: 20px;
+  }
+  
+  .history-item {
+    cursor: pointer;
+  }
+  
+  /* Today Section */
+  #today {
+    margin-top: 20px;
+  }
+  
+  /* Forecast Section */
+  #forecast {
+    margin-top: 20px;
+  }
+  
+  .col-md-2 {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  /* Horizontal line */
+  .hr {
+    margin-top: 20px;
+    border: 0;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .form-input {
+      width: 100%;
+    }
+  
+    .search-button {
+      width: 100%;
+    }
+  }
+  
