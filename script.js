@@ -80,4 +80,39 @@ document.addEventListener('DOMContentLoaded', function () {
       historyList.prepend(historyItem);
     }
   });
+  function displayCurrentWeather(data) {
+    todaySection.innerHTML = `
+      <h2>${data.name} - ${dayjs().format('MMMM D, YYYY')}</h2>
+      <p>Temperature: ${data.main.temp}°C</p>
+      <p>Humidity: ${data.main.humidity}%</p>
+      <p>Wind Speed: ${data.wind.speed} m/s</p>
+      <p>Weather: ${data.weather[0].description} <i class="fas fa-${getWeatherIcon(data.weather[0].icon)}"></i></p>
+    `;
+  }
+  
+  function getWeatherIcon(iconCode) {
+    // Map OpenWeatherMap icon codes to FontAwesome icons
+    const iconMap = {
+      '01d': 'sun',
+      '01n': 'moon',
+      '02d': 'cloud-sun',
+      '02n': 'cloud-moon',
+      '03d': 'cloud',
+      '03n': 'cloud',
+      '04d': 'cloud',
+      '04n': 'cloud',
+      '09d': 'cloud-showers-heavy',
+      '09n': 'cloud-showers-heavy',
+      '10d': 'cloud-sun-rain',
+      '10n': 'cloud-moon-rain',
+      '11d': 'bolt',
+      '11n': 'bolt',
+      '13d': 'snowflake',
+      '13n': 'snowflake',
+      '50d': 'smog',
+      '50n': 'smog',
+    };
+  
+    return iconMap[iconCode] || 'question-circle';
+  }
   

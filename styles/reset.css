@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* Reset default styles */
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
@@ -76,6 +76,13 @@ body, h1, h2, h3, p {
     margin-top: 20px;
     border: 0;
     border-top: 1px solid #ddd;
+  }
+  
+  /* Font Awesome styles */
+  .weather-header i,
+  .today-section i {
+    font-size: 1.5rem;
+    margin-left: 5px;
   }
   
   /* Responsive adjustments */
